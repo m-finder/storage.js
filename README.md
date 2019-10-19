@@ -1,15 +1,16 @@
 # <center>storage.js</center>
 
-localStorage modules for laravel
+storage for laravel
 
 #### use
 require in app.js
 
-```vue
-window.storage = require('./storage');
+```javascrip
+import storage from './storage'
 ```
 
-```vue
+#### use localStorage 
+```javascrip
 // save
 storage.set({ id: 1, name: 'm-finder' })
 
@@ -21,4 +22,20 @@ storage.remove('id')
 
 // remove all
 storage.remove()
+```
+
+
+#### use sessionStorage
+```javascrip
+// save
+storage.sessionSet({ id: 1, name: 'm-finder' })
+
+// get
+storage.sessionGet('id')
+
+// remove key
+storage.sessionRemove('id')
+
+// remove all
+storage.sessionRemove()
 ```
