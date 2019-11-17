@@ -35,7 +35,8 @@ export default {
             storage.removeItem(table)
         } else {
             const data = JSON.parse(storage[table]);
-            delete data[key]
+            delete data[key];
+			storage[table] = JSON.stringify(data);
         }
     },
     sessionSet: function (settings) {
@@ -70,6 +71,7 @@ export default {
         } else {
             const data = JSON.parse(sessionStorage[table]);
             delete data[key]
+			sessionStorage[table] = JSON.stringify(data);
         }
     }
 }
